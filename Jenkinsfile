@@ -30,8 +30,9 @@ pipeline {
 				echo "Integration Test"
 			}
 		}
-	} post {
-		// declare what do do after stages completion
+	}
+	// declare what do do after stages completion
+	post {
 		always {
 			echo "Stage processing done."
 		}
