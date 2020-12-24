@@ -30,5 +30,16 @@ pipeline {
 				echo "Integration Test"
 			}
 		}
+	} post {
+		// declare what do do after stages completion
+		always {
+			echo "Stage processing done."
+		}
+		success {
+			echo "This was a success."
+		}
+		failure {
+			echo "This was a failure."
+		}
 	}
 }
