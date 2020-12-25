@@ -43,7 +43,7 @@ pipeline {
 		stage('Test') {
 			steps {
 				echo "Test"
-				//sh 'mvn test'
+				sh 'mvn test'
 			}
 		}
 		stage('Integration Test') {
@@ -69,13 +69,13 @@ pipeline {
 		}
 		stage('Push Docker Image') {
 			steps {
-				echo "Push Docker Image"
-				script {
-					docker.withRegistry('', 'dockerhub') {
-						dockerImage.push();
-						dockerImage.push('latest');
-					}
-				}
+				echo "Push Docker Image - skip for now"
+		// 		script {
+		// 			docker.withRegistry('', 'dockerhub') {
+		// 				dockerImage.push();
+		// 				dockerImage.push('latest');
+		// 			}
+		// 		}
 			}
 		}
 	}
